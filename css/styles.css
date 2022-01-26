@@ -13,12 +13,64 @@
     width: 32%;
     height: 50%;
     background-color: lightblue;
-    border: 1px black solid;
-    display: flex;
-    justify-content: center;
+}
+
+.container-central{
+    width: 300px;
 }
 
 .titulo{
     font-size: 30px;
     font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container-jugador, .container-cpu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-row1, .container-row2, .container-row3{
+    height: 50px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.container-sorteo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-numero{
+    height: 120px;
+    width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 35px;
+    margin-top: 10px;
+}
+
+.numero-sorteo{
+    font-size: 50px;
+    margin-top: 35px;
+}
+
+.boton{
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+}
+
+.numeros-carton{
+
+}
+
+.numeros-tahcados{
+    
 }
