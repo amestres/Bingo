@@ -52,10 +52,6 @@ function showCard(array, tipo){
     }
 }
 
-function tacharNumero(numero){
-    let existe = arrayJugador.includes(numero)
-}
-
 function numeroNuevo(){
     let numero = 0;
     let index = 0;
@@ -67,7 +63,16 @@ function numeroNuevo(){
     }
     arrayNumeros[index] = 0;
     numeroSorteo.textContent = numero;
-    tacharNumero(numero)
+    tacharNumero(numero);
+}
+
+function tacharNumero(numero){
+    //let existe1 = arrayJugador.includes(numero)
+    //let existe2 = arrayCPU.includes(numero)
+    let borrar = document.querySelectorAll(`.number${numero}`)
+    borrar.forEach(element => {
+        element.classList.add("tachado")
+    });
 }
 
 boton.addEventListener("click", () => numeroNuevo())
