@@ -33,12 +33,15 @@
     align-items: center;
 }
 
-.container-row1, .container-row2, .container-row3{
+.container-row1-jugador, .container-row2-jugador, .container-row3-jugador, .container-row1-cpu, .container-row2-cpu, .container-row3-cpu{
     height: 50px;
     width: 100%;
     border: 1px solid black;
     background-color: white;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .container-sorteo{
@@ -68,10 +71,9 @@
     width: 100px;
 }
 
-.numeros-carton{
-
-}
-
-.numeros-tachados{
-    
+.number{
+    width: 16%;
+    height: 100%;
+    font-size: 30px;
+    text-align: center;
 }

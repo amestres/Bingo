@@ -5,8 +5,10 @@ const boton = document.querySelector(".boton")
 const numeroSorteo = document.querySelector(".numero-sorteo")
 
 rellenarBombo()
-createCard(arrayJugador)
-createCard(arrayCPU)
+createCard(arrayJugador,"jugador")
+console.log(arrayJugador)
+createCard(arrayCPU,"cpu")
+console.log(arrayCPU)
 
 function rellenarBombo (){
     for(let i = 1; i <= arrayNumeros.length; i++){
@@ -15,7 +17,7 @@ function rellenarBombo (){
     console.log(arrayNumeros)
 }
 
-function createCard(array){
+function createCard(array,tipo){
     let numero = 0;
     let index = 0;
     for(let x = 0; x <= array.length-1; x++){
@@ -28,23 +30,47 @@ function createCard(array){
         array[x] = numero
     }
     array.sort(function(a,b){return a-b;})
-    console.log(array)
+    showCard(array, tipo)
 }
 
-function numeroNuevo(array){
+function showCard(array, tipo){
+    for(let x = 0; x <= array.length-1; x++){
+        let p = document.createElement("p");
+        p.className = `number number${array[x]}`
+        p.textContent = array[x]
+        let div;
+        if(x<=4){
+            div = document.querySelector(`.container-row1-${tipo}`)
+        }
+        else if (x <= 9){
+            div = document.querySelector(`.container-row2-${tipo}`)
+        }
+        else if (x <= 14){
+            div = document.querySelector(`.container-row3-${tipo}`)
+        }
+        div.appendChild(p);
+    }
+}
+
+function tacharNumero(numero){
+    let existe = arrayJugador.includes(numero)
+}
+
+function numeroNuevo(){
     let numero = 0;
     let index = 0;
     numero = Math.floor(Math.random() * (91 - 1 ) + 1)
-    index = array.indexOf(numero)
+    index = arrayNumeros.indexOf(numero)
     while(index === -1){
         numero = Math.floor(Math.random() * (91 - 1 ) + 1)
-        index = array.indexOf(numero)
+        index = arrayNumeros.indexOf(numero)
     }
+    arrayNumeros[index] = 0;
     numeroSorteo.textContent = numero;
-    array[index] = 0;
+    tacharNumero(numero)
 }
 
-boton.addEventListener("click", () => numeroNuevo(arrayNumeros))
+boton.addEventListener("click", () => numeroNuevo())
 
 
 
