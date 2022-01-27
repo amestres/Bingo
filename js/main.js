@@ -3,18 +3,17 @@ const arrayJugador = Array(15)
 const arrayCPU = Array(15)
 const boton = document.querySelector(".boton")
 const numeroSorteo = document.querySelector(".numero-sorteo")
+let contadorJugador = 0;
+let contadorCPU = 0;
 
 rellenarBombo()
 createCard(arrayJugador,"jugador")
-console.log(arrayJugador)
 createCard(arrayCPU,"cpu")
-console.log(arrayCPU)
 
 function rellenarBombo (){
     for(let i = 1; i <= arrayNumeros.length; i++){
         arrayNumeros[i-1] = i;
     }
-    console.log(arrayNumeros)
 }
 
 function createCard(array,tipo){
@@ -67,12 +66,28 @@ function numeroNuevo(){
 }
 
 function tacharNumero(numero){
-    //let existe1 = arrayJugador.includes(numero)
-    //let existe2 = arrayCPU.includes(numero)
     let borrar = document.querySelectorAll(`.number${numero}`)
     borrar.forEach(element => {
         element.classList.add("tachado")
     });
+    for(let i = 0; i <= 15; i++){ 
+        if(arrayJugador[i] === numero){
+            contadorJugador++;
+            comprobarGanador(contadorJugador, "Has ganado :)")
+        }
+        if(arrayCPU[i] === numero){
+            contadorCPU++;
+            comprobarGanador(contadorCPU, "Has perdido :(")
+        }     
+    }
+}
+
+function comprobarGanador(contador, alerta){
+    if(contador === 15){
+        alert(alerta);
+        boton.remove();
+        //window.location.reload()
+    }
 }
 
 boton.addEventListener("click", () => numeroNuevo())

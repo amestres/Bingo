@@ -34,7 +34,7 @@
 }
 
 .container-row1-jugador, .container-row2-jugador, .container-row3-jugador, .container-row1-cpu, .container-row2-cpu, .container-row3-cpu{
-    height: 50px;
+    height: 40px;
     width: 100%;
     border: 1px solid black;
     background-color: white;
@@ -42,6 +42,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    text-align: center;
+}
+
+.number{
+    width: 16%;
+    height: 100%;
+    font-size: 30px;
+    margin-top: 4px;
+}
+
+.tachado{
+    text-decoration: line-through red;
 }
 
 .container-sorteo{
@@ -69,15 +81,4 @@
     margin-top: 20px;
     height: 30px;
     width: 100px;
-}
-
-.number{
-    width: 16%;
-    height: 100%;
-    font-size: 30px;
-    text-align: center;
-}
-
-.tachado{
-    text-decoration: line-through;
 }
