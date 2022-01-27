@@ -75,16 +75,16 @@ function tacharNumero(numero){
     for(let i = 0; i <= 15; i++){ 
         if(arrayJugador[i] === numero){
             contadorJugador++;
-            comprobarGanador(contadorJugador, "Has ganado :)")
+            checkWinner(contadorJugador, "Has ganado :)")
         }
         if(arrayCPU[i] === numero){
             contadorCPU++;
-            comprobarGanador(contadorCPU, "Has perdido :(")
+            checkWinner(contadorCPU, "Has perdido :(")
         }     
     }
 }
 
-function comprobarGanador(contador, alerta){
+function checkWinner(contador, alerta){
     if(contador === 15){
         alert(alerta);
         boton.remove();
