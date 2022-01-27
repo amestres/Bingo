@@ -51,6 +51,8 @@ function showCard(array, tipo){
     }
 }
 
+boton.addEventListener("click", () => numeroNuevo())
+
 function numeroNuevo(){
     let numero = 0;
     let index = 0;
@@ -89,8 +91,6 @@ function comprobarGanador(contador, alerta){
         //window.location.reload()
     }
 }
-
-boton.addEventListener("click", () => numeroNuevo())
 
 
 
