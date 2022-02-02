@@ -28,7 +28,6 @@ function createCard(array,tipo){
         }
         array[x] = numero
     }
-    array.sort(function(a,b){return a-b;}) 
     showCard(array, tipo)
 }
 
